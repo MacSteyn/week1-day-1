@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact - My Website</title>
-
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- Container -->
     <div id="container">
 
         <header>
             <h1>My Website</h1>
         </header>
 
-        <!-- Navigation -->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -25,50 +22,45 @@
             </ul>
         </nav>
 
-        <!-- Main content -->
         <main>
             <h2>My Third Heading</h2>
-
             <p>This is my third paragraph.</p>
-
-            <img src="images/central_park.jpg" alt="Central Park" width="500">
 
             <form action="/signup" method="post">
                 <fieldset>
                     <legend>User Personal Information</legend>
 
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name"><br><br>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
 
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email"><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
 
-                    <label for="phone">Phone:</label><br>
-                    <input type="text" id="phone" name="phone"><br><br>
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone">
 
-                    <label>Gender:</label><br>
+                    <label>Gender:</label>
                     <input type="radio" id="male" name="gender" value="male">
                     <label for="male">Male</label>
 
                     <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label><br><br>
+                    <label for="female">Female</label>
 
-                    <label for="contact">Preferred Contact Method:</label><br>
+                    <label for="contact">Preferred Contact Method:</label>
                     <select id="contact" name="contact">
                         <option value="email">Email</option>
                         <option value="phone">Phone</option>
-                    </select><br><br>
+                    </select>
 
-                    <label for="reason">Reason for visit:</label><br>
-                    <textarea id="reason" rows="5" cols="30"></textarea><br><br>
+                    <label for="reason">Reason for visit:</label>
+                    <textarea id="reason" rows="5" cols="30"></textarea>
 
                     <input type="submit" value="Sign Up">
                 </fieldset>
             </form>
 
-            <table border="1">
+            <table>
                 <caption>Calories Comparison of Popular Burgers</caption>
-
                 <thead>
                     <tr>
                         <th>Type</th>
@@ -78,7 +70,6 @@
                         <th>Whataburger</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr>
                         <td>Calories</td>
@@ -95,7 +86,6 @@
                         <td>25 g</td>
                     </tr>
                 </tbody>
-
                 <tfoot>
                     <tr>
                         <td>Vendor</td>
@@ -106,6 +96,7 @@
                     </tr>
                 </tfoot>
             </table>
+
         </main>
 
         <footer>
