@@ -110,6 +110,9 @@ input[type="submit"] {
     margin-top: 20px;
     width: 120px;
 }
+main #album #photo img {
+    width: 400px;
+}
 
 /* ===== Footer ===== */
 footer {
