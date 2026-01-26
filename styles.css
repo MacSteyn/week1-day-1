@@ -15,7 +15,7 @@ header {
     background: url("images/central_park.jpg") 0 -200px no-repeat;
     background-size: 1500px;
     height: 400px;
-    padding-top: 100px;
+    padding-top: 100px; 
     padding-left: 100px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
@@ -110,9 +110,74 @@ input[type="submit"] {
     margin-top: 20px;
     width: 120px;
 }
-main #album #photo img {
-    width: 400px;
+
+/* ===== Album Grid (ADDED) ===== */
+#album {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 10px;
+    list-style: none;
+    padding: 0;
 }
+#album {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+#album li {
+    display: block;
+}
+
+#album li img {
+    width: 100%;
+    display: block;
+}
+
+/* ===============================
+   Album Hover Description Feature
+   =============================== */
+
+/* 1️⃣ List */
+#album li {
+    position: relative;      /* Parent container */
+    cursor: pointer;
+}
+
+/* 2️⃣ Caption */
+.caption {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px;
+}
+
+/* 3️⃣ Description */
+.description {
+    position: absolute;      /* Child element */
+    left: 10px;
+    bottom: 10px;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 10px;
+    font-size: 14px;
+    visibility: hidden;      /* Hidden by default */
+}
+
+/* 4️⃣ List when mouse over */
+#album li:hover {
+    border: 2px solid #818db3;
+}
+
+/* 5️⃣ Description when list is hovered */
+#album li:hover .description {
+    visibility: visible;     /* Show description */
+}
+
+
 
 /* ===== Footer ===== */
 footer {

@@ -1,34 +1,118 @@
-<h1> My Fourth Heading</h1>
-<p> My Fourth Paragraph. </p>
- <ul id="album">
-    <!--<li id="photo"><img src="images/winterland1.jpg"></li>
-    <li id="photo"><img src="images/winterland2.jpg"></li>
-    <li id="photo"><img src="images/winterland3.jpg"></li>
-    <li id="photo"><img src="images/winterland4.jpg"></li>
-    <li id="photo"><img src="images/winterland5.jpg"></li>
-    <li id="photo"><img src="images/winterland6.jpg"></li>-->
- </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Fourth Web Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
 
- <footer>&copy; Copyright 2020 </footer>
+<body>
+    <div id="container">
+        <header style="font-size: 60px; color: #fff;">
+            My Web Site Brand
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page2.html">About</a></li>
+                <li><a href="page4.html">Gallery</a></li>
+                <li><a href="page3.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>My Fourth Heading</h1>
+            <p>My Fourth paragraph.</p>
+
+            <!-- Album -->
+            <ul id="album"></ul>
+
+            <!-- Info Box -->
+            <div id="infoBox" class="info-box" style="display: none;">
+                <h2 id="infoHeading"></h2>
+                <p id="infoText"></p>
+                <!-- <a href="#" id="closeInfoBox">Click This To Close</a> -->
+            </div>
+
+            <div class="backdrop"></div>
+            <div class="box">
+               <!-- <div class="close">x</div> -->
+            </div>
+        </main>
+
+        <footer>&copy; Copyright 2025</footer>
     </div>
 
-<script>
-    var photo =[]; //Declare an empty array to store element
-    var filename =[]; //Declare an empty array to store image filenames
-    var imageList = []; //Declare an empty array to store html list that contain an image
-    var image; //Declare an empty variable to store the assembled image list code
-    var OpenList= "<li id='photo'>"; //Declare a variable to store opening list tag
-    var CloseList="</li>"; //Declare a variable to store closing list tag
+    <script>
+        var photos = [];
+        var fileNames = [];
+        var imageList = [];
 
-    //Create a loop to creata 6 images starting with index of 0
-    for (var i=0; i<6; i++){
-        filename.push("winterland"+(i+1));//created image file name and store in the array
-        photos.push("<img src='images/"+filename[i]+".jpg'>"); //Create the image tag and store in the array
-        image =openList + photos[i] + CloseList; //Assemble the list item with image tag
-        imageList.push (image); //Store the assembled list item in the array
+        var captionTexts = [
+            "Majestic Cliffside View",
+            "Sunset Over the Cliff Edge",
+            "The Rocky Outcrop",
+            "Cliff's Edge Adventure",
+            "Waves Crashing Below",
+            "Overlooking the Vast Ocean"
+        ];
 
-    }
-    //Display all the six images codes stored in the array
-    document.getElementById("album").innerHTML = imageList.join("");
-</script>
+        var descTexts = [
+            "A beautiful snowy landscape with pine trees.",
+            "Sunlight glistening on fresh snow.",
+            "A cozy cabin in a snowy forest.",
+            "Majestic mountains covered in snow.",
+            "A serene frozen lake at sunset.",
+            "Skiers enjoying the slopes."
+        ];
+
+        /* UPDATED: class -> id (photo1, photo2, ...) */
+        var openList = "<li id='photo";
+        var closeList = "</li>";
+        var openCaptionTag = "<p class='caption'>";
+        var closeCaptionTag = "</p>";
+        var openDescTag = "<p class='description'>";
+        var closeDescTag = "</p>";
+
+        for (var i = 0; i < 6; i++) {
+            fileNames.push("winterland" + (i + 1));
+            photos.push("<img src='images/" + fileNames[i] + ".jpg' alt='Winterland Image'>");
+
+            var image =
+                openList + (i + 1) + "'>" +
+                photos[i] +
+                openCaptionTag + captionTexts[i] + closeCaptionTag +
+                openDescTag + descTexts[i] + closeDescTag +
+                closeList;
+
+            imageList.push(image);
+        }
+
+        document.getElementById("album").innerHTML = imageList.join("");
+
+        var infoBox = document.getElementById("infoBox");
+        var infoHeading = document.getElementById("infoHeading");
+        var infoText = document.getElementById("infoText");
+        var closeInfoBox = document.getElementById("closeInfoBox");
+
+        var descriptions = document.querySelectorAll(".description");
+
+        descriptions.forEach(function (desc, index) {
+            desc.addEventListener("click", function () {
+                infoHeading.textContent = captionTexts[index];
+                infoText.textContent = descTexts[index];
+                infoBox.style.display = "block";
+            });
+        });
+
+        closeInfoBox.addEventListener("click", function (e) {
+            e.preventDefault();
+            infoBox.style.display = "none";
+        });
+    </script>
+
+    <script src="js/lightbox.js"></script>
 </body>
+</html>
