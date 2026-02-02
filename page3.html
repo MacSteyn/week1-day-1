@@ -5,106 +5,136 @@
     <title>Contact - My Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <div id="container">
+<div id="container">
 
-        <header>
-            <h1>My Website</h1>
-        </header>
+    <header>
+        <h1>My Website</h1>
+    </header>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page2.html">About</a></li>
-                <li><a href="page3.html">Contact</a></li>
-                <li><a href="page4.html">Gallery</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="page2.html">About</a></li>
+            <li><a href="page3.html">Contact</a></li>
+            <li><a href="page4.html">Gallery</a></li>
+        </ul>
+    </nav>
 
-        <main>
-            <h2>My Third Heading</h2>
-            <p>This is my third paragraph.</p>
+    <main>
+        <h2>My Third Heading</h2>
+        <p>This is my third paragraph.</p>
 
-            <form action="/signup" method="post">
-                <fieldset>
-                    <legend>User Personal Information</legend>
+        <form action="/signup" method="post">
+            <fieldset>
+                <legend>User Personal Information</legend>
 
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
 
-                    <label for="email">Email:</label>
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+
+                <label for="contact">How should we contact you?</label>
+                <select id="contact" name="contact">
+                    <option value="">-- Select one --</option>
+                    <option id="contactEmail" value="email">Email</option>
+                    <option id="contactPhone" value="phone">Phone</option>
+                </select>
+
+                <div id="emailBox" style="display: none;">
+                    <label for="email">Enter your email</label>
                     <input type="email" id="email" name="email">
+                </div>
 
-                    <label for="phone">Phone:</label>
+                <div id="phoneBox" style="display: none;">
+                    <label for="phone">Enter your phone</label>
                     <input type="text" id="phone" name="phone">
+                </div>
 
-                    <label>Gender:</label>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
+                <label for="inquiryType">Type of Inquiry:</label>
+                <select id="inquiryType" name="inquiryType">
+                    <option id="optionDefault" value="">-- Select an option --</option>
+                    <option id="optionSupport" value="support">Technical Support</option>
+                    <option id="optionSales" value="sales">Sales</option>
+                    <option id="optionFeedback" value="feedback">Feedback</option>
+                </select>
 
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
+                <div id="supportBox" style="display: none;">
+                    <label for="supportIssue">Describe your issue:</label>
+                    <input type="text" id="supportIssue">
+                </div>
 
-                    <label for="contact">Preferred Contact Method:</label>
-                    <select id="contact" name="contact">
-                        <option value="email">Email</option>
-                        <option value="phone">Phone</option>
-                    </select>
+                <div id="salesBox" style="display: none;">
+                    <label for="salesQuestion">Sales question:</label>
+                    <input type="text" id="salesQuestion">
+                </div>
 
-                    <label for="reason">Reason for visit:</label>
-                    <textarea id="reason" rows="5" cols="30"></textarea>
+                <div id="feedbackBox" style="display: none;">
+                    <label for="feedbackText">Your feedback:</label>
+                    <input type="text" id="feedbackText">
+                </div>
 
-                    <input type="submit" value="Sign Up">
-                </fieldset>
-            </form>
+                <label for="reason">Reason for visit:</label>
+                <textarea id="reason" rows="5" cols="30"></textarea>
 
-            <table>
-                <caption>Calories Comparison of Popular Burgers</caption>
-                <thead>
-                    <tr>
-                        <th>Type</th>
-                        <th>Big Mac</th>
-                        <th>Whopper</th>
-                        <th>Dave's Double</th>
-                        <th>Whataburger</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Calories</td>
-                        <td>563</td>
-                        <td>677</td>
-                        <td>870</td>
-                        <td>590</td>
-                    </tr>
-                    <tr>
-                        <td>Fat (g)</td>
-                        <td>30 g</td>
-                        <td>40 g</td>
-                        <td>51 g</td>
-                        <td>25 g</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>Vendor</td>
-                        <td>McDonald's</td>
-                        <td>Burger King</td>
-                        <td>Wendy's</td>
-                        <td>Whataburger</td>
-                    </tr>
-                </tfoot>
-            </table>
+                <input type="submit" value="Sign Up">
+            </fieldset>
+        </form>
 
-        </main>
+        <table>
+            <caption>Calories Comparison of Popular Burgers</caption>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Big Mac</th>
+                    <th>Whopper</th>
+                    <th>Dave's Double</th>
+                    <th>Whataburger</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Calories</td>
+                    <td>563</td>
+                    <td>677</td>
+                    <td>870</td>
+                    <td>590</td>
+                </tr>
+                <tr>
+                    <td>Fat (g)</td>
+                    <td>30 g</td>
+                    <td>40 g</td>
+                    <td>51 g</td>
+                    <td>25 g</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Vendor</td>
+                    <td>McDonald's</td>
+                    <td>Burger King</td>
+                    <td>Wendy's</td>
+                    <td>Whataburger</td>
+                </tr>
+            </tfoot>
+        </table>
 
-        <footer>
-            &copy; 2020 My Website
-        </footer>
+    </main>
 
-    </div>
+    <footer>
+        &copy; 2020 My Website
+    </footer>
+
+</div>
+
+<!-- External JavaScript -->
+<script src="gallery.js"></script>
 
 </body>
 </html>

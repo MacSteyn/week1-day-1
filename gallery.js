@@ -1,4 +1,41 @@
+/* ================================
+   PART 1: CONTACT FORM DROPDOWN
+   ================================ */
 
+// Select menu
+const inquiryType = document.getElementById("inquiryType");
+
+// Input sections
+const supportBox = document.getElementById("supportBox");
+const salesBox = document.getElementById("salesBox");
+const feedbackBox = document.getElementById("feedbackBox");
+
+// Hide all boxes function
+function hideAllBoxes() {
+    supportBox.style.display = "none";
+    salesBox.style.display = "none";
+    feedbackBox.style.display = "none";
+}
+
+// Event listener for dropdown
+if (inquiryType) {
+    inquiryType.addEventListener("change", function () {
+        hideAllBoxes();
+
+        if (this.value === "support") {
+            supportBox.style.display = "block";
+        } else if (this.value === "sales") {
+            salesBox.style.display = "block";
+        } else if (this.value === "feedback") {
+            feedbackBox.style.display = "block";
+        }
+    });
+}
+
+
+/* ================================
+   PART 2: IMAGE GALLERY SCRIPT
+   ================================ */
 
 var photos = [];
 var fileNames = [];
@@ -45,14 +82,20 @@ for (var i = 0; i < 6; i++) {
     imageList.push(image);
 }
 
-document.getElementById("album").innerHTML = imageList.join("");
+// Load gallery if album exists
+var album = document.getElementById("album");
+if (album) {
+    album.innerHTML = imageList.join("");
+}
 
 var infoBox = document.getElementById("infoBox");
 var infoHeading = document.getElementById("infoHeading");
 var infoText = document.getElementById("infoText");
 var closeInfoBox = document.getElementById("closeInfoBox");
 
-closeInfoBox.innerHTML = closeText;
+if (closeInfoBox) {
+    closeInfoBox.innerHTML = closeText;
+}
 
 var descriptions = document.querySelectorAll(".description");
 
@@ -64,7 +107,35 @@ descriptions.forEach(function (desc, index) {
     });
 });
 
-closeInfoBox.addEventListener("click", function (e) {
-    e.preventDefault();
-    infoBox.style.visibility = "hidden";
-});
+if (closeInfoBox) {
+    closeInfoBox.addEventListener("click", function (e) {
+        e.preventDefault();
+        infoBox.style.visibility = "hidden";
+    });
+}
+
+
+/* ================================
+   PREFERRED CONTACT METHOD LOGIC
+   ================================ */
+
+var contactMethod = document.getElementById("contact");
+var emailBox = document.getElementById("emailBox");
+var phoneBox = document.getElementById("phoneBox");
+
+function hideContactBoxes() {
+    emailBox.style.display = "none";
+    phoneBox.style.display = "none";
+}
+
+if (contactMethod) {
+    contactMethod.addEventListener("change", function () {
+        hideContactBoxes();
+
+        if (this.value === "email") {
+            emailBox.style.display = "block";
+        } else if (this.value === "phone") {
+            phoneBox.style.display = "block";
+        }
+    });
+}
