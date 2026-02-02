@@ -140,13 +140,13 @@ input[type="submit"] {
    Album Hover Description Feature
    =============================== */
 
-/* 1️⃣ List */
+/* List */
 #album li {
     position: relative;      /* Parent container */
     cursor: pointer;
 }
 
-/* 2️⃣ Caption */
+/*  Caption */
 .caption {
     text-align: center;
     font-weight: bold;
@@ -180,12 +180,12 @@ input[type="submit"] {
     visibility: hidden;      /* Hidden by default */
 }
 
-/* 4️⃣ List when mouse over */
+/*  List when mouse over */
 #album li:hover {
     border: 2px solid #818db3;
 }
 
-/* 5️⃣ Description when list is hovered */
+/*  Description when list is hovered */
 #album li:hover .description {
     visibility: visible;     /* Show description */
 }
