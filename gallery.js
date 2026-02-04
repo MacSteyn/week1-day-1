@@ -139,3 +139,36 @@ if (contactMethod) {
         }
     });
 }
+
+
+/* ============================================
+   PART 3: LIGHTBOX FEATURE (ADDED FOR LAB TASK)
+   ============================================ */
+
+$(document).ready(function () {
+
+    // When any gallery image is clicked
+    $("#album li img").click(function () {
+
+        // Clone the clicked image (assignment requirement)
+        let copyImage = $(this).clone();
+
+        // Clear previous content and insert the cloned image
+        $(".box").empty().append(copyImage);
+
+        // Show the backdrop and box (method chaining)
+        $(".backdrop, .box").css("display", "block");
+    });
+
+    // Clicking the backdrop closes the lightbox
+    $(".backdrop").click(function () {
+        $(".backdrop, .box").css("display", "none");
+    });
+
+    // Close button inside the box (ADDED)
+    $(".closeBtn").click(function () {
+        $(".backdrop, .box").css("display", "none");
+    });
+
+});
+       
